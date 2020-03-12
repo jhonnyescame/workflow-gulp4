@@ -24,12 +24,28 @@ p{
 ul{
     max-width: 100%;
     list-style: none;
+    padding: 20px;
+    display: block;
+    background-color: #199894;
     li{
         float: left;
         width: 18%;
+        display: block;
+        margin:0 5px;
         background-color: #181818;
         color:#FFF;
-        margin:4px;
         text-align: center;
+        padding: 5px 0;
+        &:hover{
+            background-color: #00835C;
+            a{
+                color:#000;
+            }
+        }
+        a{
+            color:#FFF;
+            display: block;
+            text-decoration:none;
+        }
     }
 }

@@ -6,6 +6,9 @@
 	<title>Document</title>
 </head>
 <body>
+	<?php
+		include('include/menu.php');
+	?>
 	<img class="topo-img" src="assets/img/Lighthouse.webp" alt="">
 	<img class="logo" src="assets/img/vitrine-00.webp" alt="">
 	<h1>
@@ -22,5 +25,8 @@
 		<li>Lorem ipsum dolor sit amet,</li>
 		<li>Nisi harum velit fugiat suscipit.</li>
 	</ul>
+	<?php
+		include('include/footer.php');
+	?>
 </body>
 </html>

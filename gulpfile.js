@@ -27,9 +27,6 @@ var paths = {
     // }
 };
 
-
-
-
 function style() {
     return gulp
         .src(paths.styles.src)
@@ -47,14 +44,29 @@ function reload() {
 }
 
 function watch() {
-    browserSync.init({
-        server: {
-            baseDir: "SITE"
-        }
+      var files = [
+      //CSS
+      './SITE/assets/css/**/*.css',
+
+      //PHP
+      './SITE/**/*.php',
+      './SITE/include/**/*.php',
+
+      //JS
+      './SITE/assets/js/*.js',
+      ];
+      browserSync.init(files, {
+        proxy:"http://localhost/GULP-4-V2/SITE/",
+        notify:false
     });
+    // browserSync.init({
+    //     server: {
+    //         baseDir: "SITE"
+    //     }
+    // });
     gulp.watch(paths.styles.src, style);
     gulp.watch(paths.styles.imgsrc, img).on('change', browserSync.reload);
-    gulp.watch("SITE/*.html").on('change', browserSync.reload);
+    gulp.watch("SITE/*.php").on('change', browserSync.reload);
 }
 
 
@@ -69,7 +81,7 @@ function img(){
 
 
 
-exports.watch = watch
+exports.watch = watch;
 exports.style = style;
 exports.webp = webp;
 exports.img = img;
