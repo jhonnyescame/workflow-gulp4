@@ -75,6 +75,7 @@ exports.webp = webp;
 exports.img = img;
 
 
-var build = gulp.parallel(style, watch, img);
+var build = gulp.parallel(style, watch);
+// var build = gulp.parallel(style, watch, img);
  
 gulp.task('default', build);
